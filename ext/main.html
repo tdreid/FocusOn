@@ -16,8 +16,10 @@
                 </div>                
             </div>
             <div>
-                <h5>Loaded from storage:</h5>
-                <pre data-bind="text:status">Bindings not applied.</pre>
+                <h5>Things to do:</h5>
+                <ol data-bind="foreach: list">
+                    <li data-bind="text: itemName"></li>
+                </ol>
             </div>            
         </main>
         <script src="./js/knockout-3.5.0.js"></script>
