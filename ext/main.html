@@ -9,7 +9,12 @@
     </head>
     <body>
         <main class="container" id="main">
-            <div data-bind="text: 'Hello, ZD!'"></div>
+            <div class="input-group mb-2">
+                <input type="text" class="form-control" data-bind="textInput: newItem, event: {keypress: TextInputKeyPress}" >
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" data-bind="click: addItem">+</button>
+                </div>                
+            </div>
             <div>
                 <h5>Loaded from storage:</h5>
                 <pre data-bind="text:status">Bindings not applied.</pre>
