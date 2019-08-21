@@ -6,7 +6,8 @@ function ItemViewModel(itemName = 'New Item') {
 
 function ExtensionViewModel(data = null) {
     const self = this;
-    self.status = ko.observable(JSON.stringify(data, null, 2));
+
+    self.list = ko.observableArray([]);
 }
 
 function applySecureBindings() {
