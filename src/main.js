@@ -9,6 +9,13 @@ function ExtensionViewModel(data = null) {
 
     self.list = ko.observableArray([]);
     self.newItem = ko.observable('');
+
+    self.addItem = () => {
+        if (self.newItem() !== ''){
+            self.list.push(new ItemViewModel(self.newItem()));
+            self.newItem('');            
+        }
+    };
 }
 
 function applySecureBindings() {
