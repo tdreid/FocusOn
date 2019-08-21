@@ -8,6 +8,7 @@ function ExtensionViewModel(data = null) {
     const self = this;
 
     self.list = ko.observableArray([]);
+    self.newItem = ko.observable('');
 }
 
 function applySecureBindings() {
