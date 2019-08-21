@@ -1,14 +1,14 @@
 {
-  "name": "ZD_NEW_NAME",
-  "description" : "ZD_NEW_DESCRIPTION",
-  "version": "0.1.0",
+  "name": "FocusOn",
+  "description" : "Chrome Extension to help focus on items to do",
+  "version": "0.2.0",
   "manifest_version": 2,
   "background": {
       "persistent": false,
       "scripts": ["background.js"]
   },
   "browser_action": {
-    "default_title": "ZD_NEW_DEFAULT_TITLE"
+    "default_title": "FocusOn"
   },
   "permissions": [
     "storage"
