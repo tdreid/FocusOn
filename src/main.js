@@ -16,6 +16,11 @@ function ExtensionViewModel(data = null) {
             self.newItem('');            
         }
     };
+
+    self.TextInputKeyPress = (data, event) => {
+        event.keyCode === 13 && self.addItem();
+        return true;
+    };
 }
 
 function applySecureBindings() {
