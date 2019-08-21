@@ -1,3 +1,9 @@
+function ItemViewModel(itemName = 'New Item') {
+    const thisItem = this;
+
+    thisItem.itemName = ko.observable(itemName);
+}
+
 function ExtensionViewModel(data = null) {
     const self = this;
     self.status = ko.observable(JSON.stringify(data, null, 2));
