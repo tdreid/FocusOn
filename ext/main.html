@@ -21,9 +21,9 @@
                     <li>
                         <span data-bind="text: itemName, visible: !editMode(), click: toggleEditMode"></span>
                         <span data-bind="visible: editMode" class="input-group">
-                            <input type="text" data-bind="textInput: itemName" class="form-control form-control-small" />
+                            <input type="text" data-bind="textInput: itemName" class="form-control form-control-sm" />
                             <span class="input-group-append">
-                                <button class="btn btn-primary" type="button" data-bind="click: toggleEditMode">ok</button>
+                                <button class="btn btn-primary btn-sm" type="button" data-bind="click: toggleEditMode">ok</button>
                             </span>
                         </span>
                     </li>
