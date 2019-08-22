@@ -5,6 +5,7 @@
         <style>
             @import url('./css/bootstrap.min.css');
             @import url('./css/main.css');
+            @import url('./css/all.css');
         </style>
     </head>
     <body>
@@ -19,19 +20,24 @@
                 <h5>Things to do:</h5>
                 <ol data-bind="foreach: list">
                     <li>
-                        <span data-bind="text: itemName, visible: !editMode(), click: toggleEditMode"></span>
+                        <span data-bind="visible: !editMode(), click: toggleEditMode">
+                            <span data-bind="text: itemName"></span>
+                        </span>
                         <span data-bind="visible: editMode" class="input-group">
                             <input type="text" data-bind="textInput: itemName" class="form-control form-control-sm" />
                             <span class="input-group-append">
                                 <button class="btn btn-primary btn-sm" type="button" data-bind="click: toggleEditMode">ok</button>
+                                <button class="btn btn-outline-secondary btn-sm" data-bind="click: $root.removeItem"><span class="far fa-trash-alt"></span></button>
                             </span>
                         </span>
                     </li>
                 </ol>
+                <button data-bind="visible: list().length > 0, click: clear" class="btn btn-outline-secondary btn-sm">Clear All</button>
             </div>            
         </main>
         <script src="./js/knockout-3.5.0.js"></script>
         <script src="./js/knockout-secure-binding.min.js"></script>
+        <script src="./js/knockout.mapping.min.js"></script>
         <script src="main.min.js"></script>
     </body>
 </html>
