@@ -1,3 +1,7 @@
 body {
     margin-top: 2em;
 }
+
+.fa-trash-alt {
+    color: red;
+}
