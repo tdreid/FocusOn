@@ -2,6 +2,9 @@ function ItemViewModel(itemName = 'New Item') {
     const thisItem = this;
 
     thisItem.itemName = ko.observable(itemName);
+    thisItem.editMode = ko.observable(false);
+
+    thisItem.toggleEditMode = () => thisItem.editMode(!thisItem.editMode());
 }
 
 function ExtensionViewModel(data = null) {

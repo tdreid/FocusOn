@@ -4,7 +4,7 @@
         <title>FocusOn</title>
         <style>
             @import url('./css/bootstrap.min.css');
-            @import url('./css/main.css');          
+            @import url('./css/main.css');
         </style>
     </head>
     <body>
@@ -18,7 +18,15 @@
             <div>
                 <h5>Things to do:</h5>
                 <ol data-bind="foreach: list">
-                    <li data-bind="text: itemName"></li>
+                    <li>
+                        <span data-bind="text: itemName, visible: !editMode(), click: toggleEditMode"></span>
+                        <span data-bind="visible: editMode" class="input-group">
+                            <input type="text" data-bind="textInput: itemName" class="form-control form-control-small" />
+                            <span class="input-group-append">
+                                <button class="btn btn-primary" type="button" data-bind="click: toggleEditMode">ok</button>
+                            </span>
+                        </span>
+                    </li>
                 </ol>
             </div>            
         </main>
