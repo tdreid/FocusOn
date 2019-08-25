@@ -1,14 +1,14 @@
 {
-  "name": "zd_new_package_name",
-  "version": "0.1.0",
-  "description": "ZD_NEW_PACKAGE_DESCRIPTION",
+  "name": "FocusOn",
+  "version": "0.2.0",
+  "description": "An interactive to do list that helps you FocusOn what to do next",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify src/main.js -t [babelify --presets [ @babel/preset-env minify ] ] -o ext/main.min.js",
     "build-debug": "browserify src/main.js -t [babelify --presets [ @babel/preset-env ] ] -o ext/main.min.js"
   },
-  "author": "",
+  "author": "Trevor Reid <trevor.d.reid@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.4",

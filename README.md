@@ -1,8 +1,6 @@
-_This extension was cloned from boilerplate. Customize the README below._
+# FocusOn Chrome Extension
 
-# ZD_NEW_NEW_PAGE_TITLE
-
-_Describe the new extension_ 
+An interactive to do list that helps you FocusOn what to do next
 
 ## Build
 1. This repo includes the unpacked extension.  You should not need to build 
