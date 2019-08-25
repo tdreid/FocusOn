@@ -1,6 +1,6 @@
 {
   "name": "FocusOn",
-  "description" : "Chrome Extension to help focus on items to do",
+  "description" : "An interactive to do list that helps you FocusOn what to do next",
   "version": "0.2.0",
   "manifest_version": 2,
   "background": {
