@@ -18,7 +18,7 @@
             </div>
             <div>
                 <h5>Things to do:</h5>
-                <ol data-bind="foreach: list">
+                <ol data-bind="foreach: sortedList">
                     <li>
                         <span data-bind="visible: !editMode(), click: toggleEditMode">
                             <span data-bind="text: itemName"></span>
