@@ -15,7 +15,9 @@ function ExtensionViewModel(data = []) {
   self.newItem = ko.observable('');
   self.showItems = ko.observable(5);
   self.sortedList = ko.computed(() =>
-    self.list.sorted((a, b) => a.createdAt() - b.createdAt())
+    self.list
+      .sorted((a, b) => a.createdAt() - b.createdAt())
+      .slice(0, self.showItems())
   );
 
   self.addItem = () => {
