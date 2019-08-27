@@ -14,12 +14,12 @@
                 <input type="text" class="form-control" data-bind="textInput: newItem, event: {keypress: TextInputKeyPress}" >
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="button" data-bind="click: addItem">+</button>
-                </div>                
+                </div>             
             </div>
             <div>
                 <h5>Things to do:</h5>
-                <ol data-bind="foreach: sortedList">
-                    <li>
+                <ol data-bind="foreach: sortedList" class="list-group">
+                    <li class="list-group-item">
                         <span data-bind="visible: !editMode(), click: toggleEditMode">
                             <span data-bind="text: itemName"></span>
                         </span>
@@ -32,6 +32,16 @@
                         </span>
                     </li>
                 </ol>
+            </div>
+            <div>
+                <label>
+                    Number of items to show: 
+                    <select class="form-control" data-bind="options: [5, 10, 15, 25, 40, 65], value: showItems"></select>
+                </label>
+                <label>
+                     of 
+                    <span data-bind="text: list().length"></span>
+                </label>  
             </div>            
         </main>
         <script src="./js/knockout-3.5.0.js"></script>
