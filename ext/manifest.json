@@ -1,7 +1,7 @@
 {
   "name": "FocusOn",
   "description" : "An interactive to do list that helps you FocusOn what to do next",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "manifest_version": 2,
   "background": {
       "persistent": false,

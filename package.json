@@ -1,6 +1,6 @@
 {
   "name": "FocusOn",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "An interactive to do list that helps you FocusOn what to do next",
   "main": "main.js",
   "scripts": {
