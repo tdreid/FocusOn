@@ -2,10 +2,12 @@ body {
     margin-top: 2em;
 }
 
-.fa-trash-alt {
+ol > li:nth-of-type(odd) {
+    background-color: cornsilk;
+}
+
+.icon-red {
     color: red;
 }
 
-ol > li:nth-of-type(odd) {
-    background-color: cornsilk;
 }
