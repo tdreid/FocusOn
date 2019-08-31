@@ -24,7 +24,7 @@
                             <span data-bind="text: itemName"></span>
                         </span>
                         <span data-bind="visible: editMode" class="input-group">
-                            <input type="text" data-bind="textInput: itemName" class="form-control form-control-sm" />
+                            <input type="text" data-bind="textInput: itemName, event: {change: $root.save}" class="form-control form-control-sm" />
                             <span class="input-group-append">
                                 <button class="btn btn-primary btn-sm" type="button" data-bind="click: toggleEditMode">ok</button>
                                 <button class="btn btn-outline-secondary btn-sm" data-bind="click: $root.removeItem"><span class="far fa-trash-alt"></span></button>
