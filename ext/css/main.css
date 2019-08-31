@@ -5,3 +5,7 @@ body {
 .fa-trash-alt {
     color: red;
 }
+
+ol > li:nth-of-type(odd) {
+    background-color: cornsilk;
+}
