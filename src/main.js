@@ -1,7 +1,7 @@
 function ItemViewModel(item = {}) {
   const thisItem = this;
 
-  thisItem.itemName = ko.observable(item.itemName || 'New Item');
+  thisItem.itemName = ko.observable(item.itemName || 'New Item').extend({preventBlank : '<<Enter a description.>>'});
   thisItem.editMode = ko.observable(false);
   thisItem.createdAt = ko.observable(item.createdAt || Date.now());
 
