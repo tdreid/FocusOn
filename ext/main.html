@@ -11,23 +11,36 @@
     <body>
         <main class="container" id="main">
             <div class="input-group mb-2">
-                <input type="text" class="form-control" data-bind="textInput: newItem, event: {keypress: TextInputKeyPress}" >
+                <input type="text" class="form-control" data-bind="textInput: newItem, event: {keyup: TextInputKeyPress}" >
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="button" data-bind="click: addItem">+</button>
                 </div>             
             </div>
             <div>
-                <h5>Things to do:</h5>
+                <h5>Things To Focus On:</h5>
                 <ol data-bind="foreach: sortedList" class="list-group">
-                    <li class="list-group-item">
-                        <span data-bind="visible: !editMode(), click: toggleEditMode">
-                            <span data-bind="text: itemName"></span>
+                    <li class="list-group-item text-wrap text-break">
+                        <span data-bind="visible: !editMode()" class="input-group">
+                            <span class="input-group-prepend">
+                                <button data-bind="click: toggleEditMode, enable: active" class="btn btn-sm btn-outline-secondary">
+                                    <span class="far fa-edit"></span>
+                                </button>
+                                <button data-bind="click: $root.workItem, enable: active" class="btn btn-sm btn-outline-secondary">
+                                    <span class="fas fa-check"></span>
+                                </button>
+                                <button data-bind="click: $root.completeItem, enable: active" class="btn btn-sm btn-outline-secondary">
+                                    <span class="fas fa-check-double"></span>
+                                </button>
+                            </span>
+                            <span data-bind="text: itemName, class: statusStyle" class="ml-2"></span>
                         </span>
                         <span data-bind="visible: editMode" class="input-group">
-                            <input type="text" data-bind="textInput: itemName, event: {change: $root.save}" class="form-control form-control-sm" />
+                            <input type="text" data-bind="textInput: itemName, event: {change: $root.save, keypress: ItemKeyPress}" class="form-control form-control-sm" />
                             <span class="input-group-append">
                                 <button class="btn btn-primary btn-sm" type="button" data-bind="click: toggleEditMode">ok</button>
-                                <button class="btn btn-outline-secondary btn-sm" data-bind="click: $root.removeItem"><span class="far fa-trash-alt"></span></button>
+                                <button class="btn btn-danger btn-sm" data-bind="click: $root.removeItem">
+                                    <span>&times;</span>
+                                </button>
                             </span>
                         </span>
                     </li>
@@ -40,9 +53,12 @@
                 </label>
                 <label>
                      of 
-                    <span data-bind="text: list().length"></span>
+                    <span data-bind="text: liveItems().length"></span>
                 </label>  
-            </div>            
+            </div>
+            <div>
+                <button class="btn btn-secondary" data-bind="click: dismissPage">Dismiss Page</button>
+            </div>           
         </main>
         <script src="./js/knockout-3.5.0.js"></script>
         <script src="./js/knockout-secure-binding.min.js"></script>
